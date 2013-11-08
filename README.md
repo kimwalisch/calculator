@@ -82,6 +82,7 @@ int main()
   }
   catch (calculator::error& e) {
     std::cerr << e.what() << std::endl;
+    return 1;
   }
   return 0;
 }
