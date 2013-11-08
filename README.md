@@ -66,7 +66,7 @@ the C++ programming language and also supports the power operator.
 
 The following C++ code snippet shows how to use calculator.hpp, the
 signature of its eval function is
-```int calculator::eval<T>(const std::string& expression)```.
+```T calculator::eval<T>(const std::string& expression)```.
 If the expression string is not a valid arithmetic expression a
 ```calculator::error``` exception is thrown.
 
