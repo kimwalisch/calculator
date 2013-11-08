@@ -80,7 +80,11 @@ public:
     : std::runtime_error(message),
       expr_(expr)
   { }
+#if __cplusplus >= 201103L
+  ~error() { }
+#else
   ~error() throw() { }
+#endif
   std::string expression() const
   {
     return expr_;
