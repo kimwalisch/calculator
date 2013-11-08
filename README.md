@@ -62,7 +62,7 @@ the C++ programming language and also supports the power operator.
   </tr>
 </table>
 
-## Example
+## How it works
 
 The following C++ code snippet shows how to use calculator.hpp, the
 signature of its eval function is
