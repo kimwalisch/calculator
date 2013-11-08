@@ -76,11 +76,13 @@ If the expression string is not a valid arithmetic expression a
 
 int main()
 {
-  try {
+  try
+  {
      long result = calculator::eval<long>("(0 + ~(0xFF & 1000)*3) /-2");
      std::cout << result << std::endl;
   }
-  catch (calculator::error& e) {
+  catch (calculator::error& e)
+  {
     std::cerr << e.what() << std::endl;
     return 1;
   }
