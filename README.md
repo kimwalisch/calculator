@@ -29,11 +29,11 @@ the C++ programming language and also supports the power operator.
     <td>Bitwise AND</td>
   </tr>
   <tr align="left">
-    <td><</td>
+    <td>&lt;&lt;</td>
     <td>Shift Left</td>
   </tr>
   <tr align="left">
-    <td>>></td>
+    <td>&gt;&gt;</td>
     <td>Shift Right</td>
   </tr>
   <tr align="left">
