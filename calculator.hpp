@@ -3,6 +3,7 @@
 /// @brief     calculator::eval(const std::string&) evaluates an integer
 ///            arithmetic expression and returns the result. If an error
 ///            occurs a calculator::error exception is thrown.
+///            <https://github.com/kimwalisch/calculator>
 /// @author    Kim Walisch, <kim.walisch@gmail.com>
 /// @copyright Copyright (C) 2013 Kim Walisch
 /// @date      November 8, 2013
