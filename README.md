@@ -1,6 +1,6 @@
 calculator
 ==========
-[![Build Status](https://travis-ci.org/kimwalisch/calculator.png)](https://travis-ci.org/kimwalisch/calculator)
+[![Build Status](https://travis-ci.org/kimwalisch/calculator.svg)](https://travis-ci.org/kimwalisch/calculator)
 
 ```calculator.hpp``` is a simple C++ operator-precedence parser with
 infix notation for integer arithmetic expressions. ```calculator.hpp```
