@@ -1,4 +1,6 @@
-## About
+calculator
+==========
+[![Build Status](https://travis-ci.org/kimwalisch/calculator.png)](https://travis-ci.org/kimwalisch/calculator)
 
 ```calculator.hpp``` is a simple C++ operator-precedence parser with
 infix notation for integer arithmetic expressions. calculator.hpp is a
@@ -6,7 +8,7 @@ header-only library that compiles with any C++ compiler. I wrote it
 because I needed a portable and GPL compatible calculator for 64-bit
 integers and could not find one elsewhere.
 
-## Supported binary operators
+## Supported operators
 
 calculator.hpp uses the same operator precedence and associativity as
 the C++ programming language and also supports the power operator.
@@ -27,6 +29,10 @@ the C++ programming language and also supports the power operator.
   <tr align="left">
     <td>&</td>
     <td>Bitwise AND</td>
+  </tr>
+  <tr align="left">
+    <td>~</td>
+    <td>Unary Complement </td>
   </tr>
   <tr align="left">
     <td>&lt;&lt;</td>
