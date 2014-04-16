@@ -3,10 +3,10 @@ calculator
 [![Build Status](https://travis-ci.org/kimwalisch/calculator.png)](https://travis-ci.org/kimwalisch/calculator)
 
 ```calculator.hpp``` is a simple C++ operator-precedence parser with
-infix notation for integer arithmetic expressions. calculator.hpp is a
-header-only library that compiles with any C++ compiler. I wrote it
-because I needed a portable and GPL compatible calculator for 64-bit
-integers and could not find one elsewhere.
+infix notation for integer arithmetic expressions. ```calculator.hpp```
+is a header-only library that compiles with any C++ compiler. I
+wrote it because I needed a portable and GPL compatible calculator
+for 64-bit integers and could not find one elsewhere.
 
 ### Supported operators
 calculator.hpp uses the same operator precedence and associativity as
@@ -99,7 +99,6 @@ int main()
   catch (calculator::error& e)
   {
     std::cerr << e.what() << std::endl;
-    return 1;
   }
   return 0;
 }
