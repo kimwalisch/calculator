@@ -8,8 +8,7 @@ header-only library that compiles with any C++ compiler. I wrote it
 because I needed a portable and GPL compatible calculator for 64-bit
 integers and could not find one elsewhere.
 
-## Supported operators
-
+### Supported operators
 calculator.hpp uses the same operator precedence and associativity as
 the C++ programming language and also supports the power operator.
 
@@ -68,12 +67,22 @@ the C++ programming language and also supports the power operator.
   </tr>
 </table>
 
-## How it works
+### C++ API
+```C++
+int calculator::eval(const std::string& expression);
+int calculator::eval(char c);
 
-The following C++ code snippet shows how to use calculator.hpp, the
-signature of its eval function is
-```T calculator::eval<T>(const std::string& expression)```.
-If the expression string is not a valid arithmetic expression a
+<typename T> T calculator::eval<T>(const std::string& expression);
+<typename T> T calculator::eval<T>(char c);
+
+// calculator throws a calculator::error
+// exception if an error occurs
+class calculator::error;
+```
+
+### How to use it
+The following C++ code snippet shows how to use calculator.hpp, if the
+expression string is not a valid integer arithmetic expression a
 ```calculator::error``` exception is thrown.
 
 ```C++
@@ -84,8 +93,8 @@ int main()
 {
   try
   {
-     long result = calculator::eval<long>("(0 + ~(0xFF & 1000)*3) /-2");
-     std::cout << result << std::endl;
+    int result = calculator::eval("(0 + ~(0xFF & 1000)*3) / -2");
+    std::cout << result << std::endl;
   }
   catch (calculator::error& e)
   {
