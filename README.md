@@ -95,6 +95,10 @@ int main()
   {
     int result = calculator::eval("(0 + ~(0xFF & 1000)*3) / -2");
     std::cout << result << std::endl;
+
+    // 64-bit arithmetic
+    long long r64 = calculator::eval<long long>("2**60");
+    std::cout << r64 << std::endl;
   }
   catch (calculator::error& e)
   {
