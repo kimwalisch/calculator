@@ -2,7 +2,7 @@ calculator
 ==========
 [![Build Status](https://travis-ci.org/kimwalisch/calculator.svg)](https://travis-ci.org/kimwalisch/calculator)
 
-```calculator.hpp``` is a simple C++ operator-precedence parser with
+calculator is a simple C++ operator-precedence parser with
 infix notation for integer arithmetic expressions. ```calculator.hpp```
 is a header-only library that compiles with any C++ compiler. I
 wrote it because I needed a portable and GPL compatible calculator
