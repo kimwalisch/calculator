@@ -112,11 +112,11 @@ public:
       if (!isEnd())
         unexpected();
     }
-    catch (const calculator::error&)
+    catch (const calculator::error& e)
     {
       while(!stack_.empty())
         stack_.pop();
-      throw;
+      throw e;
     }
     return result;
   }
@@ -190,13 +190,13 @@ private:
   /// Exponentiation by squaring, x^n.
   static T pow(T x, T n)
   {
-    T res = 1;
+    register T res = 1;
     while (n != 0)
     {
       if (n % 2 != 0)
       {
         res *= x;
-        n -= 1;
+        --n;
       }
       x *= x;
       n /= 2;
@@ -261,7 +261,7 @@ private:
   ///
   void expect(const std::string& str)
   {
-    if (expr_.compare(index_, str.size(), str) != 0)
+    if (expr_.compare(index_, str.size(), str))
       unexpected();
     index_ += str.size();
   }
@@ -276,13 +276,16 @@ private:
     throw calculator::error(expr_, msg.str());
   }
 
-  /// Eat all white space characters at the
+  /// Ignore all white space characters at the
   /// current expression index.
   ///
+  void ignoreSpaces() { eatSpaces(); }
+  
+  //XXX deprecated
   void eatSpaces()
   {
-    while (std::isspace(getCharacter()) != 0)
-      index_++;
+    while ( std::isspace(getCharacter()) )
+      ++index_;
   }
 
   /// Parse a binary operator at the current expression index.
@@ -313,11 +316,12 @@ private:
 
   static T toInteger(char c)
   {
+    
     if (c >= '0' && c <= '9') return c -'0';
+    std::tolower(c);
     if (c >= 'a' && c <= 'f') return c -'a' + 0xa;
-    if (c >= 'A' && c <= 'F') return c -'A' + 0xa;
-    T noDigit = 0xf + 1;
-    return noDigit;
+    const T NO_DIGIT = 0x10;
+    return NO_DIGIT;
   }
 
   T getInteger() const
@@ -384,8 +388,7 @@ private:
                 index_++; break;
       case '~': index_++; val = ~parseValue(); break;
       case '+': index_++; val =  parseValue(); break;
-      case '-': index_++; val =  parseValue() * static_cast<T>(-1);
-                break;
+      case '-': index_++; val = -parseValue(); break;
       default : if (!isEnd())
                   unexpected();
                 throw calculator::error(expr_, "Syntax error: value expected at end of expression");
