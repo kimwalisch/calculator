@@ -72,8 +72,8 @@ the C++ programming language and also supports the power operator.
 int calculator::eval(const std::string& expression);
 int calculator::eval(char c);
 
-<typename T> T calculator::eval<T>(const std::string& expression);
-<typename T> T calculator::eval<T>(char c);
+template <typename T> T calculator::eval<T>(const std::string& expression);
+template <typename T> T calculator::eval<T>(char c);
 
 // calculator throws a calculator::error
 // exception if an error occurs
