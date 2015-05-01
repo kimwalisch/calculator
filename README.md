@@ -5,7 +5,7 @@ calculator
 calculator is a simple C++ operator-precedence parser with
 infix notation for integer arithmetic expressions. ```calculator.hpp```
 is a header-only library that compiles with any C++ compiler. I
-wrote it because I needed a portable and GPL compatible calculator
+wrote it because I needed a portable and BSD licensed calculator
 for 64-bit integers and could not find one elsewhere.
 
 ### Supported operators
@@ -91,19 +91,20 @@ expression string is not a valid integer arithmetic expression a
 
 int main()
 {
-  try
-  {
-    int result = calculator::eval("(0 + ~(0xFF & 1000)*3) / -2");
-    std::cout << result << std::endl;
+    try
+    {
+        int result = calculator::eval("(0 + ~(0xFF & 1000)*3) / -2");
+        std::cout << result << std::endl;
+    
+        // 64-bit arithmetic
+        long long r64 = calculator::eval<long long>("2**60");
+        std::cout << r64 << std::endl;
+    }
+    catch (calculator::error& e)
+    {
+        std::cerr << e.what() << std::endl;
+    }
 
-    // 64-bit arithmetic
-    long long r64 = calculator::eval<long long>("2**60");
-    std::cout << r64 << std::endl;
-  }
-  catch (calculator::error& e)
-  {
-    std::cerr << e.what() << std::endl;
-  }
-  return 0;
+    return 0;
 }
 ```
