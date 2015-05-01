@@ -4,13 +4,13 @@ calculator
 
 calculator is a simple C++ operator-precedence parser with
 infix notation for integer arithmetic expressions. ```calculator.hpp```
-is a header-only library that compiles with any C++ compiler. I
-wrote it because I needed a portable and BSD licensed calculator
-for 64-bit integers and could not find one elsewhere.
+is a header-only library that compiles with any C++ compiler. It
+is BSD licensed and it works with any integer type e.g. 
+```int```, ```long long```, ```__int128_t```.
 
 ### Supported operators
-calculator.hpp uses the same operator precedence and associativity as
-the C++ programming language and also supports the power operator.
+```calculator.hpp``` uses the same operator precedence and associativity
+as the C++ programming language and also supports the power operator.
 
 <table>
   <tr align="center">
