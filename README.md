@@ -6,7 +6,7 @@ calculator is a simple C++ operator-precedence parser with
 infix notation for integer arithmetic expressions. ```calculator.hpp```
 is a header-only library that compiles with any C++ compiler and works
 with any integer type e.g. ```int```, ```long long```,
-```__uint128_t```. It is BSD licensed.
+```__uint128_t```.
 
 ### Supported operators
 ```calculator.hpp``` uses the same operator precedence and associativity
