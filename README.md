@@ -66,19 +66,6 @@ as the C++ programming language and also supports the power operator.
   </tr>
 </table>
 
-### C++ API
-```C++
-int calculator::eval(const std::string& expression);
-int calculator::eval(char c);
-
-template <typename T> T calculator::eval<T>(const std::string& expression);
-template <typename T> T calculator::eval<T>(char c);
-
-// calculator throws a calculator::error
-// exception if an error occurs
-class calculator::error;
-```
-
 ### How to use it
 ```calculator::eval("1+2")``` takes a string representing an integer
 arithmetic expression as its input parameter, evaluates the arithmetic
@@ -108,4 +95,17 @@ int main()
 
     return 0;
 }
+```
+
+### C++ API
+```C++
+int calculator::eval(const std::string& expression);
+int calculator::eval(char c);
+
+template <typename T> T calculator::eval<T>(const std::string& expression);
+template <typename T> T calculator::eval<T>(char c);
+
+// calculator throws a calculator::error
+// exception if an error occurs
+class calculator::error;
 ```
