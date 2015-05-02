@@ -98,14 +98,11 @@ int main()
 ```
 
 ### C++ API
+Functions defined in ```calculator.hpp```.
 ```C++
 int calculator::eval(const std::string& expression);
 int calculator::eval(char c);
 
 template <typename T> T calculator::eval<T>(const std::string& expression);
 template <typename T> T calculator::eval<T>(char c);
-
-// calculator throws a calculator::error
-// exception if an error occurs
-class calculator::error;
 ```
