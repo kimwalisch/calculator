@@ -80,7 +80,7 @@ class calculator::error;
 ```
 
 ### How to use it
-The following C++ code snippet shows how to use ```calculator.hpp```,
+The following C++ code snippet shows how to use calculator.hpp,
 if the expression string is not a valid integer arithmetic expression
 a ```calculator::error``` exception is thrown.
 
