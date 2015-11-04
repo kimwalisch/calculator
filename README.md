@@ -68,9 +68,9 @@ as the C++ programming language and also supports the power operator.
 
 ### How to use it
 ```calculator::eval("1+2")``` takes a string with an integer arithmetic
-expression as its input parameter, evaluates the arithmetic expression
-and returns the result. If the expression string is not a valid integer
-arithmetic expression a ```calculator::error``` exception is thrown.
+expression, evaluates the arithmetic expression and returns the result.
+If the expression string is not a valid integer arithmetic expression a
+```calculator::error``` exception is thrown.
 
 ```C++
 #include "calculator.hpp"
