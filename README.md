@@ -7,7 +7,8 @@ arithmetic expressions. ```calculator.hpp``` is a header-only library
 that compiles with any C++ compiler and works with any integer type
 e.g. ```int```, ```long long```, ```__uint128_t```.
 
-### Supported operators
+Supported operators
+-------------------
 ```calculator.hpp``` uses the same operator precedence and associativity
 as the C++ programming language and also supports the power operator.
 
@@ -66,11 +67,12 @@ as the C++ programming language and also supports the power operator.
   </tr>
 </table>
 
-### How to use it
+How to use it
+-------------
 ```calculator::eval("1+2")``` takes a string with an integer arithmetic
-expression, evaluates the arithmetic expression and returns the result.
-If the expression string is not a valid integer arithmetic expression a
-```calculator::error``` exception is thrown.
+expression as an argument, evaluates the arithmetic expression and returns
+the result. If the expression string is not a valid integer arithmetic
+expression a ```calculator::error``` exception is thrown.
 
 ```C++
 #include "calculator.hpp"
@@ -96,12 +98,16 @@ int main()
 }
 ```
 
-### C++ API
+C++ API
+-------
 Functions defined in ```calculator.hpp```.
 ```C++
 int calculator::eval(const std::string& expression);
 int calculator::eval(char c);
 
-template <typename T> T calculator::eval<T>(const std::string& expression);
-template <typename T> T calculator::eval<T>(char c);
+template <typename T>
+T calculator::eval<T>(const std::string& expression);
+
+template <typename T>
+T calculator::eval<T>(char c);
 ```
