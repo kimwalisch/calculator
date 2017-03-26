@@ -1,6 +1,7 @@
 calculator
 ==========
 [![Build Status](https://travis-ci.org/kimwalisch/calculator.svg)](https://travis-ci.org/kimwalisch/calculator)
+[![Github Releases](https://img.shields.io/github/release/kimwalisch/calculator.svg)](https://github.com/kimwalisch/calculator/releases)
 
 calculator is a simple C++ operator-precedence parser for integer
 arithmetic expressions. ```calculator.hpp``` is a header-only library
