@@ -5,8 +5,7 @@
 ///            occurs a calculator::error exception is thrown.
 ///            <https://github.com/kimwalisch/calculator>
 /// @author    Kim Walisch, <kim.walisch@gmail.com>
-/// @copyright Copyright (C) 2013 Kim Walisch
-/// @date      August 11, 2017
+/// @copyright Copyright (C) 2017 Kim Walisch
 /// @license   BSD 2-Clause, http://opensource.org/licenses/BSD-2-Clause
 /// @version   1.1
 ///
