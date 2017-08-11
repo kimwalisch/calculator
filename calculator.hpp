@@ -6,9 +6,9 @@
 ///            <https://github.com/kimwalisch/calculator>
 /// @author    Kim Walisch, <kim.walisch@gmail.com>
 /// @copyright Copyright (C) 2013 Kim Walisch
-/// @date      November 30, 2013
+/// @date      August 11, 2017
 /// @license   BSD 2-Clause, http://opensource.org/licenses/BSD-2-Clause
-/// @version   1.0
+/// @version   1.1
 ///
 /// == Supported operators ==
 ///
