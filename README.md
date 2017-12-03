@@ -6,7 +6,7 @@ calculator
 calculator is a simple C++ operator-precedence parser for integer
 arithmetic expressions. ```calculator.hpp``` is a header-only library
 that compiles with any C++ compiler and works with any integer type
-e.g. ```int```, ```long long```, ```__uint128_t```.
+e.g. ```int```, ```long```, ```__uint128_t```.
 
 Supported operators
 -------------------
@@ -77,6 +77,7 @@ expression a ```calculator::error``` exception is thrown.
 
 ```C++
 #include "calculator.hpp"
+#include <stdint.h>
 #include <iostream>
 
 int main()
@@ -87,7 +88,7 @@ int main()
         std::cout << result << std::endl;
     
         // 64-bit arithmetic
-        long long r64 = calculator::eval<long long>("2**60");
+        int64_t r64 = calculator::eval<int64_t>("2**60");
         std::cout << r64 << std::endl;
     }
     catch (calculator::error& e)
