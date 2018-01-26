@@ -5,9 +5,9 @@
 ///            occurs a calculator::error exception is thrown.
 ///            <https://github.com/kimwalisch/calculator>
 /// @author    Kim Walisch, <kim.walisch@gmail.com>
-/// @copyright Copyright (C) 2017 Kim Walisch
+/// @copyright Copyright (C) 2013-2018 Kim Walisch
 /// @license   BSD 2-Clause, http://opensource.org/licenses/BSD-2-Clause
-/// @version   1.1
+/// @version   1.2
 ///
 /// == Supported operators ==
 ///
@@ -189,19 +189,27 @@ private:
   /// Exponentiation by squaring, x^n.
   static T pow(T x, T n)
   {
+    if (n <= 0)
+      return 0;
+
     T res = 1;
-    while (n != 0)
+
+    while (n > 0)
     {
       if (n % 2 != 0)
       {
         res *= x;
         n -= 1;
       }
-      x *= x;
       n /= 2;
+
+      if (n > 0)
+        x *= x;
     }
+
     return res;
   }
+
 
   T checkZero(T value) const
   {
