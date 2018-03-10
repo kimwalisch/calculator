@@ -1,15 +1,18 @@
-calculator
-==========
+# calculator
+
 [![Build Status](https://travis-ci.org/kimwalisch/calculator.svg)](https://travis-ci.org/kimwalisch/calculator)
 [![Github Releases](https://img.shields.io/github/release/kimwalisch/calculator.svg)](https://github.com/kimwalisch/calculator/releases)
 
-calculator is a simple C++ operator-precedence parser for integer
-arithmetic expressions. ```calculator.hpp``` is a header-only library
-that compiles with any C++ compiler and works with any integer type
-e.g. ```int```, ```long```, ```__uint128_t```.
+```calculator.hpp``` is a header-only library for parsing and
+evaluating integer arithmetic expressions e.g. ```"10 + 5 * (7 - 1)"```. It compiles with any
+C++ compiler and works with any integer type e.g. ```int```,
+```long```, ```uint64_t```.
 
-Supported operators
--------------------
+calculator is a simple but fast
+[operator-precedence parser](https://en.wikipedia.org/wiki/Operator-precedence_parser). 
+
+# Supported operators
+
 ```calculator.hpp``` uses the same operator precedence and associativity
 as the C++ programming language and also supports the power operator.
 
@@ -68,8 +71,18 @@ as the C++ programming language and also supports the power operator.
   </tr>
 </table>
 
-How to use it
--------------
+# C++ API
+
+Functions defined in ```calculator.hpp```.
+```C++
+int calculator::eval(const std::string& expression);
+
+template <typename T>
+T calculator::eval<T>(const std::string& expression);
+```
+
+# How to use it
+
 ```calculator::eval("1+2")``` takes a string with an integer arithmetic
 expression as an argument, evaluates the arithmetic expression and returns
 the result. If the expression string is not a valid integer arithmetic
@@ -98,18 +111,4 @@ int main()
 
     return 0;
 }
-```
-
-C++ API
--------
-Functions defined in ```calculator.hpp```.
-```C++
-int calculator::eval(const std::string& expression);
-int calculator::eval(char c);
-
-template <typename T>
-T calculator::eval<T>(const std::string& expression);
-
-template <typename T>
-T calculator::eval<T>(char c);
 ```
