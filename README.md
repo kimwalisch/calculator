@@ -3,8 +3,8 @@
 [![Build Status](https://travis-ci.org/kimwalisch/calculator.svg)](https://travis-ci.org/kimwalisch/calculator)
 [![Github Releases](https://img.shields.io/github/release/kimwalisch/calculator.svg)](https://github.com/kimwalisch/calculator/releases)
 
-```calculator.hpp``` is a header-only library for parsing and
-evaluating integer arithmetic expressions e.g. ```"10 + 5 * (7 - 1)"```. It compiles with any
+```calculator.hpp``` is a header-only C++ library for parsing and
+evaluating integer arithmetic expressions e.g. ```"10 * (7 - 1)"```. It compiles with any
 C++ compiler and works with any integer type e.g. ```int```,
 ```long```, ```uint64_t```.
 
