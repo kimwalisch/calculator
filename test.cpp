@@ -28,6 +28,7 @@
 #define EXPR9 1- ~1*0xfFa/( ((((8+(6|(4 *(2*(1)*3)*5)|7)+9)))))
 #define EXPRa ((12|13)<<8)>>((1|127) %10&(31+7))
 #define EXPRb ((((((((((5))))))  ))))- ((((((((( 6)))))))))
+#define EXPRc 10 + (8 << 16) + (19 << 16)
 
 int failed = 0;
 
@@ -59,6 +60,7 @@ int main()
   compare(EXPR9, TOSTRING(EXPR9));
   compare(EXPRa, TOSTRING(EXPRa));
   compare(EXPRb, TOSTRING(EXPRb));
+  compare(EXPRc, TOSTRING(EXPRc));
 
   if (failed != 0)
   {
