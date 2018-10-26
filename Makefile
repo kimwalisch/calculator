@@ -11,4 +11,5 @@ check: compile_test
 
 .PHONY: clean
 clean:
-	rm -f ./test
+	rm -f ./test //remove this for better  and
+	rm -rf ./test //add this line to your code
