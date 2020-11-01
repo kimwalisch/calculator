@@ -126,7 +126,7 @@ public:
   }
 
 private:
-  enum
+  enum class Operators
   {
     OPERATOR_NULL,
     OPERATOR_BITWISE_OR,     /// |
@@ -146,11 +146,11 @@ private:
   struct Operator
   {
     /// Operator, one of the OPERATOR_* enum definitions
-    int op;
+    Operators op;
     int precedence;
     /// 'L' = left or 'R' = right
     int associativity;
-    Operator(int opr, int prec, int assoc) :
+    Operator(Operators opr, int prec, int assoc) :
       op(opr),
       precedence(prec),
       associativity(assoc)
@@ -171,7 +171,7 @@ private:
     }
     bool isNull() const
     {
-      return op.op == OPERATOR_NULL;
+      return op.op == Operators::OPERATOR_NULL;
     }
   };
 
@@ -227,18 +227,18 @@ private:
   {
     switch (op.op)
     {
-      case OPERATOR_BITWISE_OR:     return v1 | v2;
-      case OPERATOR_BITWISE_XOR:    return v1 ^ v2;
-      case OPERATOR_BITWISE_AND:    return v1 & v2;
-      case OPERATOR_BITWISE_SHL:    return v1 << v2;
-      case OPERATOR_BITWISE_SHR:    return v1 >> v2;
-      case OPERATOR_ADDITION:       return v1 + v2;
-      case OPERATOR_SUBTRACTION:    return v1 - v2;
-      case OPERATOR_MULTIPLICATION: return v1 * v2;
-      case OPERATOR_DIVISION:       return v1 / checkZero(v2);
-      case OPERATOR_MODULO:         return v1 % checkZero(v2);
-      case OPERATOR_POWER:          return pow(v1, v2);
-      case OPERATOR_EXPONENT:       return v1 * pow(10, v2);
+      case Operators::OPERATOR_BITWISE_OR:     return v1 | v2;
+      case Operators::OPERATOR_BITWISE_XOR:    return v1 ^ v2;
+      case Operators::OPERATOR_BITWISE_AND:    return v1 & v2;
+      case Operators::OPERATOR_BITWISE_SHL:    return v1 << v2;
+      case Operators::OPERATOR_BITWISE_SHR:    return v1 >> v2;
+      case Operators::OPERATOR_ADDITION:       return v1 + v2;
+      case Operators::OPERATOR_SUBTRACTION:    return v1 - v2;
+      case Operators::OPERATOR_MULTIPLICATION: return v1 * v2;
+      case Operators::OPERATOR_DIVISION:       return v1 / checkZero(v2);
+      case Operators::OPERATOR_MODULO:         return v1 % checkZero(v2);
+      case Operators::OPERATOR_POWER:          return pow(v1, v2);
+      case Operators::OPERATOR_EXPONENT:       return v1 * pow(10, v2);
       default:                      return 0;
     }
   }
@@ -295,21 +295,21 @@ private:
     eatSpaces();
     switch (getCharacter())
     {
-      case '|': index_++;     return Operator(OPERATOR_BITWISE_OR,      4, 'L');
-      case '^': index_++;     return Operator(OPERATOR_BITWISE_XOR,     5, 'L');
-      case '&': index_++;     return Operator(OPERATOR_BITWISE_AND,     6, 'L');
-      case '<': expect("<<"); return Operator(OPERATOR_BITWISE_SHL,     9, 'L');
-      case '>': expect(">>"); return Operator(OPERATOR_BITWISE_SHR,     9, 'L');
-      case '+': index_++;     return Operator(OPERATOR_ADDITION,       10, 'L');
-      case '-': index_++;     return Operator(OPERATOR_SUBTRACTION,    10, 'L');
-      case '/': index_++;     return Operator(OPERATOR_DIVISION,       20, 'L');
-      case '%': index_++;     return Operator(OPERATOR_MODULO,         20, 'L');
+      case '|': index_++;     return Operator(Operators::OPERATOR_BITWISE_OR,      4, 'L');
+      case '^': index_++;     return Operator(Operators::OPERATOR_BITWISE_XOR,     5, 'L');
+      case '&': index_++;     return Operator(Operators::OPERATOR_BITWISE_AND,     6, 'L');
+      case '<': expect("<<"); return Operator(Operators::OPERATOR_BITWISE_SHL,     9, 'L');
+      case '>': expect(">>"); return Operator(Operators::OPERATOR_BITWISE_SHR,     9, 'L');
+      case '+': index_++;     return Operator(Operators::OPERATOR_ADDITION,       10, 'L');
+      case '-': index_++;     return Operator(Operators::OPERATOR_SUBTRACTION,    10, 'L');
+      case '/': index_++;     return Operator(Operators::OPERATOR_DIVISION,       20, 'L');
+      case '%': index_++;     return Operator(Operators::OPERATOR_MODULO,         20, 'L');
       case '*': index_++; if (getCharacter() != '*')
-                              return Operator(OPERATOR_MULTIPLICATION, 20, 'L');
-                index_++;     return Operator(OPERATOR_POWER,          30, 'R');
-      case 'e': index_++;     return Operator(OPERATOR_EXPONENT,       40, 'R');
-      case 'E': index_++;     return Operator(OPERATOR_EXPONENT,       40, 'R');
-      default :               return Operator(OPERATOR_NULL,            0, 'L');
+                              return Operator(Operators::OPERATOR_MULTIPLICATION, 20, 'L');
+                index_++;     return Operator(Operators::OPERATOR_POWER,          30, 'R');
+      case 'e': index_++;     return Operator(Operators::OPERATOR_EXPONENT,       40, 'R');
+      case 'E': index_++;     return Operator(Operators::OPERATOR_EXPONENT,       40, 'R');
+      default :               return Operator(Operators::OPERATOR_NULL,            0, 'L');
     }
   }
 
@@ -401,7 +401,7 @@ private:
   ///
   T parseExpr()
   {
-    stack_.push(OperatorValue(Operator(OPERATOR_NULL, 0, 'L'), 0));
+    stack_.push(OperatorValue(Operator(Operators::OPERATOR_NULL, 0, 'L'), 0));
     // first parse value on the left
     T value = parseValue();
 
