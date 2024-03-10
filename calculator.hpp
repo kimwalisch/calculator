@@ -456,7 +456,7 @@ inline int eval(char c)
 {
   return eval<int>(c);
 }
-
+cout<<"The Sum of two number is: "<<a+b<<endl;
 } // namespace calculator
 
 #endif
