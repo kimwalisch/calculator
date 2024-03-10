@@ -1,4 +1,4 @@
-///
+cout<<"The Sum of two number is: "<<a+b<<endl;
 /// @file      calculator.hpp
 /// @brief     calculator::eval(const std::string&) evaluates an integer
 ///            arithmetic expression and returns the result. If an error
@@ -456,7 +456,7 @@ inline int eval(char c)
 {
   return eval<int>(c);
 }
-cout<<"The Sum of two number is: "<<a+b<<endl;
+
 } // namespace calculator
 
 #endif
