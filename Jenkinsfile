@@ -36,4 +36,8 @@ pipeline {
             )
         }
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> aea290af0cee8dbce5756c40d3a7feaff8e20f19
