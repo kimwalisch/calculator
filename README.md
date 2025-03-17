@@ -1,111 +1,29 @@
-# calculator
+# Инструкция по сборке и запуску Docker-образа 
 
-```calculator.hpp``` is a header-only C++ library for parsing and
-evaluating integer arithmetic expressions e.g. ```"10 * (7 - 1)"```. It compiles with any
-C++ compiler and works with any integer type e.g. ```int```,
-```long```, ```uint64_t```.
+**Предустановки**
 
-calculator is a simple but fast
-[operator-precedence parser](https://en.wikipedia.org/wiki/Operator-precedence_parser). 
+- [Docker](https://docs.docker.com/engine/install/)
+- открыто приложение Docker Desktop либо терминал с установленным Docker Engine (если через терминал - тогда можно начинать с шага 2)
 
-# Supported operators
+**Шаги**
 
-```calculator.hpp``` uses the same operator precedence and associativity
-as the C++ programming language and also supports the power operator.
+1. Клик на "*Terminal*" в правом нижнем углу
+2. Выполнить команду `docker build -t calc .`
+3. Выполнить команду `docker run --name calc calc`
 
-<table>
-  <tr align="center">
-    <td><b>Operator</b></td>
-    <td><b>Description</b></td>
-  </tr>
-  <tr align="left">
-    <td>|</td>
-    <td>Bitwise Inclusive OR</td>
-  </tr>
-  <tr align="left">
-    <td>^</td>
-    <td>Bitwise Exclusive OR</td>
-  </tr>
-  <tr align="left">
-    <td>&</td>
-    <td>Bitwise AND</td>
-  </tr>
-  <tr align="left">
-    <td>~</td>
-    <td>Unary Complement </td>
-  </tr>
-  <tr align="left">
-    <td>&lt;&lt;</td>
-    <td>Shift Left</td>
-  </tr>
-  <tr align="left">
-    <td>&gt;&gt;</td>
-    <td>Shift Right</td>
-  </tr>
-  <tr align="left">
-    <td>+</td>
-    <td>Addition</td>
-  </tr>
-  <tr align="left">
-    <td>-</td>
-    <td>Subtraction</td>
-  </tr>
-  <tr align="left">
-    <td>*</td>
-    <td>Multiplication</td>
-  </tr>
-  <tr align="left">
-    <td>/</td>
-    <td>Division</td>
-  </tr>
-  <tr align="left">
-    <td>%</td>
-    <td>Modulo</td>
-  </tr>
-  <tr align="left">
-    <td>**</td>
-    <td>Raise to power</td>
-  </tr>
-</table>
+# Как запустить Jenkins и выполнить pipeline
 
-# C++ API
+**Предустановки**
 
-Functions defined in ```calculator.hpp```.
-```C++
-int calculator::eval(const std::string& expression);
+- [JDK](https://www.oracle.com/java/technologies/downloads/#java21) (подойдет версия 21)
+- [Jenkins](https://www.jenkins.io/doc/book/installing/) (следовать инструкции)
+- браузер
+- открыт в браузере 
 
-template <typename T>
-T calculator::eval<T>(const std::string& expression);
-```
+**Шаги**
 
-# How to use it
-
-```calculator::eval("1+2")``` takes a string with an integer arithmetic
-expression as an argument, evaluates the arithmetic expression and returns
-the result. If the expression string is not a valid integer arithmetic
-expression a ```calculator::error``` exception is thrown.
-
-```C++
-#include "calculator.hpp"
-#include <stdint.h>
-#include <iostream>
-
-int main()
-{
-    try
-    {
-        int result = calculator::eval("(0 + ~(255 & 1000)*3) / -2");
-        std::cout << result << std::endl;
-    
-        // 64-bit arithmetic
-        int64_t r64 = calculator::eval<int64_t>("2**60");
-        std::cout << r64 << std::endl;
-    }
-    catch (calculator::error& e)
-    {
-        std::cerr << e.what() << std::endl;
-    }
-
-    return 0;
-}
-```
+1. Открыть браузер
+2. В адресную строку ввести *localhost* (указать порт, который был настроен при установке)
+3. Ховер на имя нужного пайплайна
+4. Клик на появившийся значок выпадающего списка
+5. Клик на кнопку "*Собрать сейчас*"
