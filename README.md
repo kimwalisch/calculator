@@ -18,7 +18,6 @@
 - [JDK](https://www.oracle.com/java/technologies/downloads/#java21) (подойдет версия 21)
 - [Jenkins](https://www.jenkins.io/doc/book/installing/) (следовать инструкции)
 - браузер
-- открыт в браузере 
 
 **Шаги**
 
