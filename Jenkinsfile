@@ -10,7 +10,6 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 script {
-                    // Указываем имя образа
                     dockerImage = docker.build("calc:${env.BUILD_ID}")
                 }
             }
