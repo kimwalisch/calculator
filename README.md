@@ -23,10 +23,6 @@ as the C++ programming language and also supports the power operator.
     <td>Bitwise Inclusive OR</td>
   </tr>
   <tr align="left">
-    <td>^</td>
-    <td>Bitwise Exclusive OR</td>
-  </tr>
-  <tr align="left">
     <td>&</td>
     <td>Bitwise AND</td>
   </tr>
@@ -63,7 +59,7 @@ as the C++ programming language and also supports the power operator.
     <td>Modulo</td>
   </tr>
   <tr align="left">
-    <td>**</td>
+    <td>^, **</td>
     <td>Raise to power</td>
   </tr>
 </table>
