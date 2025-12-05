@@ -66,7 +66,7 @@ as the C++ programming language and also supports the power operator.
 
 # C++ API
 
-Functions defined in ```calculator.hpp```.
+Main functions defined in ```calculator.hpp```.
 ```C++
 int calculator::eval(const std::string& expression);
 
