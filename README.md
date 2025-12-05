@@ -94,7 +94,7 @@ int main()
         std::cout << result << std::endl;
     
         // 64-bit arithmetic
-        int64_t r64 = calculator::eval<int64_t>("2**60");
+        int64_t r64 = calculator::eval<int64_t>("2^60");
         std::cout << r64 << std::endl;
     }
     catch (calculator::error& e)
