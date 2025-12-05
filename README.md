@@ -5,7 +5,7 @@ evaluating integer arithmetic expressions e.g. ```"10 * (7 - 1)"```. It compiles
 C++ compiler that supports C++11 or later and works with any integer type e.g. ```int```,
 ```long```, ```uint64_t```, ```__int128_t```.
 
-calculator is a simple but fast
+**calculator** is a simple but fast
 [operator-precedence parser](https://en.wikipedia.org/wiki/Operator-precedence_parser).
 
 In version 2.0 (2025), error handling has been significantly improved. The library now
