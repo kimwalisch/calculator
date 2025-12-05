@@ -6,7 +6,14 @@ C++ compiler and works with any integer type e.g. ```int```,
 ```long```, ```uint64_t```.
 
 calculator is a simple but fast
-[operator-precedence parser](https://en.wikipedia.org/wiki/Operator-precedence_parser). 
+[operator-precedence parser](https://en.wikipedia.org/wiki/Operator-precedence_parser).
+
+In version 2.0 (2025), error handling has been significantly improved. The library now
+detects virtually all integer overflows and underflows, helping prevent incorrect
+results. An extensive test suite further ensures the correctness and robustness of
+the implementation. This **calculator** is being used in production by the
+[primesieve](https://github.com/kimwalisch/primesieve) and [primecount](https://github.com/kimwalisch/primecount)
+C/C++ libraries.
 
 # Supported operators
 
