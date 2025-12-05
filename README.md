@@ -3,7 +3,7 @@
 ```calculator.hpp``` is a header-only C++ library for parsing and
 evaluating integer arithmetic expressions e.g. ```"10 * (7 - 1)"```. It compiles with any
 C++ compiler and works with any integer type e.g. ```int```,
-```long```, ```uint64_t```.
+```long```, ```uint64_t```, ```__int128_t```.
 
 calculator is a simple but fast
 [operator-precedence parser](https://en.wikipedia.org/wiki/Operator-precedence_parser).
