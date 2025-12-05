@@ -73,10 +73,11 @@ as the C++ programming language and also supports the power operator.
 
 # C++ API
 
-Main functions defined in ```calculator.hpp```.
+Main functions defined in ```calculator.hpp```:
 ```C++
 int calculator::eval(const std::string& expression);
 
+// Any integer type, e.g.: int8_t, short, unsigned, __int128_t, ...
 template <typename T>
 T calculator::eval<T>(const std::string& expression);
 ```
