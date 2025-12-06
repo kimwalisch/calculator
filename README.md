@@ -71,7 +71,7 @@ as the C++ programming language and also supports the power operator.
     <td>Raise to power</td>
   </tr>
   <tr align="left">
-    <td>e</td>
+    <td>e, E</td>
     <td>Integer Scientific Notation</td>
   </tr>
 </table>
