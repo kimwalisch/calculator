@@ -70,6 +70,10 @@ as the C++ programming language and also supports the power operator.
     <td>^, **</td>
     <td>Raise to power</td>
   </tr>
+  <tr align="left">
+    <td>e</td>
+    <td>Integer Scientific Notation</td>
+  </tr>
 </table>
 
 # C++ API
@@ -116,4 +120,16 @@ int main()
 
     return 0;
 }
+```
+
+# Scientific notation
+
+```calculator.hpp``` also supports basic scientific notation for integers (without the dot syntax).
+
+```C++
+res = calculator::eval("1e5");
+assert(res == 100000);
+
+res = calculator::eval("2e5");
+assert(res == 200000);
 ```
