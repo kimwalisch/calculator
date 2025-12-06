@@ -127,9 +127,9 @@ int main()
 ```calculator.hpp``` also supports basic scientific notation for integers (without the dot syntax).
 
 ```C++
-res = calculator::eval("1e5");
+std::int64_t res = calculator::eval("1e5");
 assert(res == 100000);
 
-res = calculator::eval("2e5");
+std::int64_t res = calculator::eval("2e5");
 assert(res == 200000);
 ```
