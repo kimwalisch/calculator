@@ -79,7 +79,7 @@ Main functions defined in ```calculator.hpp```:
 // Default eval() returns signed 64-bit
 std::int64_t calculator::eval(const std::string& expression);
 
-// Any integer type, e.g.: uint8_t, short, unsigned int, __int128_t, ...
+// Any integer type, e.g.: int8_t, unsigned short, __int128_t, ...
 template <typename T>
 T calculator::eval<T>(const std::string& expression);
 ```
