@@ -80,18 +80,15 @@ void check(const std::string& expr,
            const std::string& expected)
 {
   T n = calculator::eval<T>(expr);
-
   std::string res = to_string(n);
-  std::cout << (res == expected ? "Correct: " : "Error: ");
-  std::cout << expr << " = " << res;
 
-  if (res != expected)
+  if (res == expected)
+    std::cout << "Correct: " << expr << " = " << res << std::endl;
+  else
   {
-    std::cerr << " != " << expected << std::endl;
+    std::cerr << "Error: " << expr << " = " << res << " != " << expected << std::endl;
     std::exit(1);
   }
-
-  std::cout << std::endl;
 }
 
 template <typename T>
