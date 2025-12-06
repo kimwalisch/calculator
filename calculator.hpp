@@ -88,13 +88,18 @@ class ExpressionParser
 {
 public:
   /// Evaluate an integer arithmetic expression and return its result.
-  /// @throw error if parsing fails.
+  /// @throw calculator::error if parsing fails.
   ///
   T eval(const std::string& expr)
   {
+    // Prevent denial of service attacks
+    if (expr.size() >= 10000)
+      throw calculator::error("Error: math expression string exceeds 10000 characters!");
+
     T result = 0;
     index_ = 0;
     expr_ = expr;
+
     try
     {
       result = parseExpr();
@@ -107,6 +112,7 @@ public:
         stack_.pop();
       throw;
     }
+
     return result;
   }
 
