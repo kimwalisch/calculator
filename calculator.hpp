@@ -446,7 +446,7 @@ private:
     {
       if (n > 0)
         return 0;
-      // 0^-n = 1/0^k = 1/0
+      // 0^-n = 1/0^n = 1/0
       if (is_signed() && n <= T(-1))
         throw_division_by_0_error();
     }
