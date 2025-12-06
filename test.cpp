@@ -13,7 +13,6 @@
 #include <algorithm>
 #include <cstdlib>
 #include <iostream>
-#include <iomanip>
 #include <limits>
 #include <random>
 #include <string>
@@ -84,11 +83,11 @@ void check(const std::string& expr,
 
   std::string res = to_string(n);
   std::cout << (res == expected ? "Correct: " : "Error: ");
-  std::cout << std::setw(40) << expected << " = " << std::setw(10) << res;
+  std::cout << expr << " = " << res;
 
   if (res != expected)
   {
-    std::cerr << " != " << res << std::endl;
+    std::cerr << " != " << expected << std::endl;
     std::exit(1);
   }
 
@@ -429,8 +428,6 @@ void uint8_tests()
 
 int main()
 {
-  std::cout.setf(std::ios::left);
-
   std::cout << std::endl;
   std::cout << "=== Trivial tests ===" << std::endl;
   std::cout << std::endl;
