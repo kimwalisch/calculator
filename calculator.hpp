@@ -62,6 +62,7 @@
 #include <cctype>
 #include <climits>
 #include <cstddef>
+#include <cstdint>
 #include <sstream>
 #include <stack>
 #include <stdexcept>
@@ -700,9 +701,9 @@ inline T eval(const std::string& expression)
   return parser.eval(expression);
 }
 
-inline int eval(const std::string& expression)
+inline std::int64_t eval(const std::string& expression)
 {
-  return eval<int>(expression);
+  return eval<std::int64_t>(expression);
 }
 
 } // namespace calculator

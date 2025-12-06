@@ -74,10 +74,12 @@ as the C++ programming language and also supports the power operator.
 # C++ API
 
 Main functions defined in ```calculator.hpp```:
-```C++
-int calculator::eval(const std::string& expression);
 
-// Any integer type, e.g.: int8_t, short, unsigned, __int128_t, ...
+```C++
+// Default eval() returns signed 64-bit
+std::int64_t calculator::eval(const std::string& expression);
+
+// Any integer type, e.g.: uint8_t, short, unsigned int, __int128_t, ...
 template <typename T>
 T calculator::eval<T>(const std::string& expression);
 ```
@@ -91,19 +93,20 @@ expression a ```calculator::error``` exception is thrown.
 
 ```C++
 #include "calculator.hpp"
-#include <stdint.h>
+#include <cassert>
 #include <iostream>
 
 int main()
 {
     try
     {
-        int result = calculator::eval("(0 + ~(255 & 1000)*3) / -2");
+        // Default eval() uses int64_t
+        std::int64_t result = calculator::eval("(0 + (255 & 1000)*3) / -2");
         std::cout << result << std::endl;
-    
-        // 64-bit arithmetic
-        int64_t r64 = calculator::eval<int64_t>("2^60");
-        std::cout << r64 << std::endl;
+
+        // GCC/Clang 128-bit integers
+        __int128_t res = calculator::eval<__int128_t>("2^100");
+        assert(res == __int128_t(1) << 100);
     }
     catch (calculator::error& e)
     {
