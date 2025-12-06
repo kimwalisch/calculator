@@ -1,7 +1,7 @@
 # calculator
 
 ```calculator.hpp``` is a minimal, header-only C++ library for parsing and evaluating
-integer arithmetic expressions e.g. ```"10 * (7 - 1)"```. It is designed for simplicity,
+integer arithmetic expressions, such as e.g. ```"10 * (7 - 1)"```. It is designed for simplicity,
 it supports all C++ integer types (e.g. ```int8_t```, ```unsigned int```, ```long```, ```__int128_t```),
 but does not support functions, comparison operators, or user variables. It compiles
 with any C++ compiler that supports C++11 or later.
