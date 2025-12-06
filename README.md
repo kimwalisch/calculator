@@ -19,7 +19,8 @@ C/C++ libraries.
 # Supported operators
 
 ```calculator.hpp``` uses the same operator precedence and associativity
-as the C++ programming language and also supports the power operator.
+as the C++ programming language and also supports the power operator and basic
+scientific notation for integers.
 
 <table>
   <tr align="center">
